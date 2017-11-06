@@ -7,11 +7,13 @@ All you have to do to use this integration is change the config.js to include th
 ## Getting Started
 
 ### Installing
+
 ```
 npm install discorddialogflow --save
 ```
 
 ### Prerequites
+
 Make sure to change the config.js file. You would need the get the token from discord and dialogflow.
 ```
 module.exports = {
@@ -23,6 +25,7 @@ module.exports = {
 ![Discord](Discord.PNG)
 
 ### Running the service
+
 This is all you have to do after changing the config.js. 😊
 ```
 node index
@@ -34,6 +37,7 @@ node index
 * [Discord.js](https://discord.js.org/) - Discord.js
 
 ## Author
+
 * **Haseem Isaac** - [Haseem Isaac](https://github.com/haseemisaac)
 
 ## License
