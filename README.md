@@ -23,7 +23,7 @@ module.exports = {
 ![Discord](Discord.PNG)
 
 ### Running the service
-This is all you have to do after changing the config.js. :)
+This is all you have to do after changing the config.js. 😊
 ```
 node index
 ```
