@@ -5,6 +5,12 @@ All you have to do to use this integration is change the config.js to include th
 
 
 ## Getting Started
+
+### Installing
+```
+npm install discorddialogflow --save
+```
+
 ### Prerequites
 Make sure to change the config.js file. You would need the get the token from discord and dialogflow.
 ```
@@ -16,10 +22,6 @@ module.exports = {
 ![Dialogflow](Dialogflow.PNG)
 ![Discord](Discord.PNG)
 
-### Installing
-```
-npm install discorddialogflow --save
-```
 ### Running the service
 This is all you have to do after changing the config.js. :)
 ```
