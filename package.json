@@ -1,0 +1,20 @@
+{
+  "name": "dialogflowdiscord",
+  "version": "1.0.0",
+  "description": "Discord Integration for API.AI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "dialogflow",
+    "chatbot"
+  ],
+  "author": "Haseem Isaac",
+  "license": "ISC",
+  "dependencies": {
+    "apiai": "^4.0.3",
+    "discord.js": "^11.2.1"
+  }
+}
