@@ -9,7 +9,7 @@ All you have to do to use this integration is change the config.js to include th
 Make sure to change the config.js file. You would need the get the token from discord and dialogflow.
 ![Dialogflow](Dialogflow.PNG)
 ![Discord](Discord.PNG)
-
+```
 module.exports = {
 	Dialogflow: '<Enter your Dialogflow token here>',
 	Discord: '<Enter your discord token here>'
