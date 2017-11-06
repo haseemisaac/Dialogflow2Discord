@@ -1,7 +1,7 @@
 {
-  "name": "dialogflowdiscord",
+  "name": "discorddialogflow",
   "version": "1.0.0",
-  "description": "Discord Integration for API.AI",
+  "description": "Discord Integration for Dialogflow (API.AI)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,14 @@
   "dependencies": {
     "apiai": "^4.0.3",
     "discord.js": "^11.2.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haseemisaac/Dialogflow2Discord.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haseemisaac/Dialogflow2Discord/issues"
+  },
+  "homepage": "https://github.com/haseemisaac/Dialogflow2Discord#readme"
 }
