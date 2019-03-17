@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const dialogflow = require('dialogflow')
-const prefix = '!'
 client.on('ready', function(){
   console.log("I am ready");
 });
