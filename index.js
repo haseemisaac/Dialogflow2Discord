@@ -1,52 +1,41 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var apiai = require('apiai');
-var config = require('./config');
-var app = apiai(config.Dialogflow);
-console.log(config);
-
+const dialogflow = require('dialogflow')
+const prefix = '!'
 client.on('ready', function(){
-    console.log("I am ready");
-    //console.log(client.user.username);
+  console.log("I am ready");
 });
 
-client.on('message', function(message){
-        if((message.cleanContent.startsWith("@" + client.user.username) || message.channel.type == 'dm') && client.user.id != message.author.id){
-        var mess = remove(client.user.username, message.cleanContent);
-        console.log(mess);
-        const user = message.author.id;
-        var promise = new Promise(function(resolve, reject) {
-            var request = app.textRequest(mess, {
-                sessionId: user
-            });
-            request.on('response', function(response) {
-                console.log(response);
-                var rep = response.result.fulfillment.speech;
-                resolve(rep);
-            });
-
-            request.on('error', function(error) {
-                resolve(null);
-            });
-
-            request.end();
-        });
-
-        (async function(){
-            var result = await promise;
-            if(result){
-                message.reply(result);
-            } else{
-                message.reply("nothing here");
-            }
-        }());
-
+client.on('message', async message => {
+  if((message.cleanContent.startsWith("@" + client.user.username) || message.channel.type == 'dm') && client.user.id != message.author.id){
+    var mess = remove(client.user.username, message.cleanContent);
+    console.log(mess);
+    const user = message.author.id;
+    const privateKey = process.env.PRIVATE_KEY.replace(/\\n/g, '\n');
+    const clientEmail = process.env.CLIENT_EMAIL
+    let config = {
+      credentials: {
+        private_key: privateKey,
+        client_email: clientEmail
+      }
     }
+    const sessionClient = new dialogflow.SessionsClient(config)
+    const sessionPath = sessionClient.sessionPath(process.env.PROJECT_ID, user)
+    const request = {
+      session: sessionPath,
+      queryInput: {
+        text: {
+          text: mess,
+          languageCode: "en-US",
+        }
+      }
+    };
+    const response = await sessionClient.detectIntent(request);
+    const rep = response[0].queryResult.fulfillmentText  //Default response
+    message.reply(rep)
+  }
 });
-
-
-function remove(username, text){
-    return text.replace("@" + username + " ", "");
-}
-
-client.login(config.Discord);
+function remove(username, text) {
+  return text.replace('@' + username + ' ', '');
+};
+client.login(process.env.BOT)  
