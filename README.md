@@ -1,3 +1,5 @@
+Apologies guys, I know this is an old repo and defo needs a lot of change, I'll hopefully try and work on a fix on this as soon as possible
+
 # Dialogflow2Discord
 
 This is an integration for Discord for Dialogflow (API.AI). 
