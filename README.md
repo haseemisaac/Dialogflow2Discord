@@ -1,9 +1,7 @@
-Apologies guys, I know this is an old repo and defo needs a lot of change, I'll hopefully try and work on a fix on this as soon as possible
-
 # Dialogflow2Discord
 
-This is an integration for Discord for Dialogflow (API.AI). 
-All you have to do to use this integration is change the config.js to include the tokens given by Dialogflow (API.AI) and Discord to run the index.js after downloading it.
+This is an integration for Discord for Dialogflow.
+All you have to do to use this integration is to create a .env file with BOT, PROJECT_ID, CLIENT_EMAIL and PRIATE_KEY to include the tokens given by Dialogflow and Discord to run the index.js after downloading it.
 
 
 ## Getting Started
@@ -11,31 +9,21 @@ All you have to do to use this integration is change the config.js to include th
 ### Installing
 
 ```
-npm install discorddialogflow --save
+npm install @google-cloud/dialogflow --save
+npm install discord.js --save
 ```
 
-### Prerequites
-
-Make sure to change the config.js file. You would need the get the token from discord and dialogflow.
-```
-module.exports = {
-	Dialogflow: '<Enter your Dialogflow token here>',
-	Discord: '<Enter your discord token here>'
-}
-```
-![Dialogflow](Dialogflow.PNG)
-![Discord](Discord.PNG)
 
 ### Running the service
 
-This is all you have to do after changing the config.js. 😊
+This is all you have to do after creating the .env file 😊
 ```
 node index
 ```
 
 ## Built With
 
-* [API.AI NodeJS Client](https://github.com/dialogflow/dialogflow-nodejs-client) - API.AI NodeJS SDK
+* [API.AI NodeJS Client](https://github.com/dialogflow/dialogflow-nodejs-client)
 * [Discord.js](https://discord.js.org/) - Discord.js
 
 ## Author
