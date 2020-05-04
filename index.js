@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const dialogflow = require('dialogflow')
+const dialogflow = require('@google-cloud/dialogflow')
 client.on('ready', function(){
   console.log("I am ready");
 });
@@ -19,7 +19,7 @@ client.on('message', async message => {
       }
     }
     const sessionClient = new dialogflow.SessionsClient(config)
-    const sessionPath = sessionClient.sessionPath(process.env.PROJECT_ID, user)
+    const sessionClient.projectAgentSessionPath(process.env.PROJECT_ID, user)
     const request = {
       session: sessionPath,
       queryInput: {
