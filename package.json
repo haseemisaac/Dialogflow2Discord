@@ -14,8 +14,8 @@
   "author": "Haseem Isaac",
   "license": "ISC",
   "dependencies": {
-    "apiai": "^4.0.3",
-    "discord.js": "^11.2.1"
+    "discord.js": "^11.5.1",
+    "@google-cloud/dialogflow": "^2.0.0"
   },
   "devDependencies": {},
   "repository": {
